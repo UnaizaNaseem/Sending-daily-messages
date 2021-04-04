@@ -38,13 +38,13 @@ def send_sms():
     message = client.messages \
       .create(
         body=random.choice(messages),
-        from_='+13479346909',
+        from_='-----',
         to=number
       )
     print(message.sid)
 
-#schedule.every().day.at("22:43").do(send_sms)
-schedule.every(10).minutes.do(send_sms)
+schedule.every().day.at("09:00").do(send_sms)
+#schedule.every(60).seconds.do(send_sms)
 
 while True:
   schedule.run_pending()
